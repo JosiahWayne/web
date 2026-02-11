@@ -1,0 +1,32 @@
+name: Zip and upload to Google Drive
+
+on:
+  push:
+    branches: [ "main" ]   # 你如果是 master 就改成 master
+
+jobs:
+  build-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create zip
+        run: |
+          ZIP_NAME="hw-${GITHUB_REPOSITORY##*/}-${GITHUB_SHA::7}.zip"
+          echo "ZIP_NAME=$ZIP_NAME" >> $GITHUB_ENV
+          zip -r "$ZIP_NAME" . -x ".git/*" ".github/*" "node_modules/*" "__pycache__/*"
+
+      - name: Install rclone
+        run: |
+          curl -fsSL https://rclone.org/install.sh | sudo bash
+
+      - name: Configure rclone
+        run: |
+          mkdir -p ~/.config/rclone
+          echo "${{ secrets.RCLONE_CONF }}" > ~/.config/rclone/rclone.conf
+
+      - name: Upload zip to Google Drive folder
+        run: |
+          rclone copy "${{ env.ZIP_NAME }}" "gdrive:" --drive-root-folder-id "${{ secrets.GDRIVE_FOLDER_ID }}"
+
