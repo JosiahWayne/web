@@ -1,0 +1,58 @@
+h1 {
+    font-family: "Snell Roundhand", cursive;
+    color: black;
+}
+
+body {
+    font-family: "Times, Times New Roman", serif;
+    font-size: 16px;
+    background-color: #f0f0f0;
+}
+
+main {
+    padding: 20px 20px 20px 20px;
+    text-align: center;
+}
+
+a:link {
+    color: #1a6fbf;
+    text-decoration: none;
+}
+
+a:visited {
+    color: gray;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e05c00;
+    text-decoration: underline overline #ff3028;
+}
+
+a:active {
+    color: #cc0000;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer {
+    font-size: 14px;
+    color: #666666;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#intro {
+    font-size: 22px;
+    color: #555555;
+    padding-bottom: 20px;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
