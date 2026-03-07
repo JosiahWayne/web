@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raster Graphics Assignment</title>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+    }
+
+    body {
+      background-image: url("../images/background.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .foreground {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 480px;
+      height: auto;
+      max-width: 45vw;
+    }
+
+    .caption {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      color: white;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 12px 18px;
+      border-radius: 8px;
+      max-width: 420px;
+    }
+
+    .caption h1 {
+      margin: 0 0 10px 0;
+      font-size: 2rem;
+    }
+
+    .caption p {
+      margin: 0;
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="caption">
+    <h1>Lost in Space</h1>
+    <p>This composition places me in a surreal outer-space landscape, creating a new context that feels imaginative and cinematic.</p>
+  </div>
+
+  <img
+    class="foreground"
+    src="../images/me-480.png"
+    srcset="../images/me-480.png 480w, ../images/me-960.png 960w, ../images/me-1440.png 1440w"
+    alt="A cutout image of me placed in a new environment"
+    width="480"
+    height="720"
+  >
+</body>
+</html>
