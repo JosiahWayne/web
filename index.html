@@ -16,19 +16,149 @@
             color: #333;
             text-align: center;
         }
+
+        /* ========== SVG Logo Styles ========== */
+        .jl-logo {
+            display: block;
+            margin: 20px auto;
+            overflow: visible;
+        }
+
+        /* Background circle */
+        .logo-bg {
+            fill: none;
+            stroke: #1a6fbf;
+            stroke-width: 3;
+            transition: all 0.3s ease;
+        }
+
+        /* Inner circle */
+        .logo-inner {
+            fill: #f8f9fa;
+            stroke: #1a6fbf;
+            stroke-width: 1.5;
+            stroke-dasharray: 5 3;
+            transition: all 0.3s ease;
+        }
+
+        /* J letter styles */
+        .letter-j {
+            fill: none;
+            stroke: #1a6fbf;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.3s ease;
+        }
+
+        /* L letter styles */
+        .letter-l {
+            fill: none;
+            stroke: #2d8659;
+            stroke-width: 8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: all 0.3s ease;
+        }
+
+        /* Decorative dot */
+        .dot {
+            fill: #2d8659;
+            transition: all 0.3s ease;
+        }
+
+        /* Initials text */
+        .initials {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            fill: #666;
+            text-anchor: middle;
+            transition: all 0.3s ease;
+        }
+
+        /* ========== SVG Link Hover States ========== */
+        .logo-link:hover .letter-j {
+            stroke: #e05c00;
+            stroke-width: 10;
+        }
+
+        .logo-link:hover .letter-l {
+            stroke: #e05c00;
+            stroke-width: 10;
+        }
+
+        .logo-link:hover .dot {
+            fill: #e05c00;
+        }
+
+        /* ========== SVG Link Active States ========== */
+        .logo-link:active .letter-j {
+            stroke: #cc0000;
+            stroke-width: 12;
+        }
+
+        .logo-link:active .letter-l {
+            stroke: #cc0000;
+            stroke-width: 12;
+        }
+
+        .logo-link:active .dot {
+            fill: #cc0000;
+        }
+
+        /* Overall logo hover effect */
+        .jl-logo:hover .logo-bg {
+            stroke-width: 4;
+        }
+
+        .jl-logo:hover .initials {
+            fill: #1a6fbf;
+        }
     </style>
     <title>Josiah's website on i6</title>
   </head>
   <body>
     <main>
         <h1>Introduction to Web Design</h1>
+
+        <!-- SVG Logo -->
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="jl-logo">
+            <title>JL Logo - A minimalist monogram combining the initials J and L for Josiah Li</title>
+
+            <!-- Background circle - drawing element 1 -->
+            <circle cx="100" cy="100" r="90" class="logo-bg"/>
+
+            <!-- Inner circle - drawing element 2 -->
+            <circle cx="100" cy="100" r="70" class="logo-inner"/>
+
+            <!-- Link 1: J letter - links to GitHub -->
+            <a href="https://josiahwayne.github.io/" target="_blank" class="logo-link">
+                <!-- J letter using path - drawing element 3 -->
+                <path d="M 85 50 L 85 130 Q 85 160 55 160" class="letter-j"/>
+                <!-- J top bar - drawing element 4 -->
+                <line x1="65" y1="50" x2="105" y2="50" class="letter-j"/>
+            </a>
+
+            <!-- Link 2: L letter - links to CSS assignment -->
+            <a href="./css/index.html" class="logo-link">
+                <!-- L letter using path - drawing element 5 -->
+                <path d="M 95 55 L 95 150 L 145 150" class="letter-l"/>
+                <!-- Decorative dot - drawing element 6 -->
+                <circle cx="145" cy="150" r="6" class="dot"/>
+            </a>
+
+            <!-- Text initials -->
+            <text x="100" y="185" class="initials">JL</text>
+        </svg>
+
         <p style="font-weight: bold;">This is Josiah's Website for CSCI-UA 4!</p>
-        <p>I’m Yanhao (Josiah) Li, a Computer Science undergraduate at NYU Shanghai currently studying away in New York. My academic interests sit at the intersection of machine learning and computer vision, especially generative models and representation learning. In this course, I’m hoping to strengthen my ability to communicate ideas clearly through writing and discussion, and to connect close reading with broader historical and social contexts. </p>
+        <p>I'm Yanhao (Josiah) Li, a Computer Science undergraduate at NYU Shanghai currently studying away in New York. My academic interests sit at the intersection of machine learning and computer vision, especially generative models and representation learning. In this course, I'm hoping to strengthen my ability to communicate ideas clearly through writing and discussion, and to connect close reading with broader historical and social contexts. </p>
         <ul style="margin-top: 20px;">
           <li><a href="./me/index.html">HTML</a></li>
           <li><a href="./css/index.html">CSS</a></li>
           <li><a href="./images/index.html">Raster Graphics</a></li>
-          <li>Vector Graphics</li>
+          <li><a href="./vector/index.html">Vector Graphics</a></li>
           <li>Website Layout</li>
           <li>Responsive Design</li>
           <li>JavaScript</li>

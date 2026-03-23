@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Vector Graphics - Josiah Li</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <h1>Vector Graphics Assignment</h1>
+        <p>A minimalist logo combining J (Josiah) and L (Li)</p>
+
+        <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="jl-logo">
+            <title>JL Logo - A minimalist monogram combining the initials J and L for Josiah Li</title>
+
+            <!-- Background circle - decorative element 1 -->
+            <circle cx="100" cy="100" r="90" class="logo-bg"/>
+
+            <!-- Inner circle - decorative element 2 -->
+            <circle cx="100" cy="100" r="70" class="logo-inner"/>
+
+            <!-- Link 1: J letter path - links to GitHub -->
+            <a href="https://josiahwayne.github.io/" target="_blank" class="logo-link">
+                <!-- J letter using path - drawing element 3 -->
+                <path d="M 85 50 L 85 130 Q 85 160 55 160"
+                      class="letter-j"/>
+                <!-- J top bar -->
+                <line x1="65" y1="50" x2="105" y2="50" class="letter-j"/>
+            </a>
+
+            <!-- Link 2: L letter path - links to assignments home -->
+            <a href="../index.html" class="logo-link">
+                <!-- L letter using path - drawing element 4 -->
+                <path d="M 95 55 L 95 150 L 145 150"
+                      class="letter-l"/>
+            </a>
+
+            <!-- Decorative dot - element 5 -->
+            <circle cx="145" cy="150" r="6" class="dot"/>
+
+            <!-- Text initials -->
+            <text x="100" y="185" class="initials">JL</text>
+        </svg>
+
+        <p class="hint">Hover over the letters to see interactions. Click J for GitHub, click L for Home.</p>
+
+        <p><a href="../index.html">Back to Assignments</a></p>
+    </main>
+</body>
+</html>

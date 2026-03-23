@@ -1,0 +1,156 @@
+/* Page styles */
+body {
+    font-family: Times, "Times New Roman", serif;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Snell Roundhand", cursive;
+    font-size: 32px;
+    color: #333;
+}
+
+a:link {
+    color: #1a6fbf;
+    text-decoration: none;
+}
+
+a:visited {
+    color: gray;
+}
+
+a:hover {
+    color: #e05c00;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #cc0000;
+}
+
+.hint {
+    font-size: 14px;
+    color: #888;
+    margin-top: 20px;
+}
+
+/* ========== SVG Logo Styles ========== */
+
+.jl-logo {
+    display: block;
+    margin: 30px auto;
+    overflow: visible;
+}
+
+/* Background circle */
+.logo-bg {
+    fill: none;
+    stroke: #1a6fbf;
+    stroke-width: 3;
+    transition: all 0.3s ease;
+}
+
+/* Inner circle */
+.logo-inner {
+    fill: #f8f9fa;
+    stroke: #1a6fbf;
+    stroke-width: 1.5;
+    stroke-dasharray: 5 3;
+    transition: all 0.3s ease;
+}
+
+/* J letter styles */
+.letter-j {
+    fill: none;
+    stroke: #1a6fbf;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.3s ease;
+}
+
+/* L letter styles */
+.letter-l {
+    fill: none;
+    stroke: #2d8659;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.3s ease;
+}
+
+/* Decorative dot */
+.dot {
+    fill: #2d8659;
+    transition: all 0.3s ease;
+}
+
+/* Initials text */
+.initials {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    fill: #666;
+    text-anchor: middle;
+    transition: all 0.3s ease;
+}
+
+/* ========== SVG Link Hover States ========== */
+
+/* J link hover */
+.logo-link:hover .letter-j {
+    stroke: #e05c00;
+    stroke-width: 10;
+}
+
+/* L link hover */
+.logo-link:hover .letter-l {
+    stroke: #e05c00;
+    stroke-width: 10;
+}
+
+.logo-link:hover .dot {
+    fill: #e05c00;
+    r: 8;
+}
+
+/* ========== SVG Link Active States ========== */
+
+/* J link active */
+.logo-link:active .letter-j {
+    stroke: #cc0000;
+    stroke-width: 12;
+}
+
+/* L link active */
+.logo-link:active .letter-l {
+    stroke: #cc0000;
+    stroke-width: 12;
+}
+
+.logo-link:active .dot {
+    fill: #cc0000;
+}
+
+/* ========== Overall logo hover effect ========== */
+.jl-logo:hover .logo-bg {
+    stroke-width: 4;
+}
+
+.jl-logo:hover .initials {
+    fill: #1a6fbf;
+}
