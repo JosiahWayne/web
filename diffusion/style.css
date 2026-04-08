@@ -47,8 +47,8 @@ body {
 .reading-progress {
   position: fixed;
   top: 8rem;
-  /* left: max(0.5rem, calc((100vw - var(--max-width)) / 2 - 1.25rem)); */
-  left: 15rem;
+  left: max(0.5rem, calc((100vw - var(--max-width)) / 2 - 1.25rem));
+  /* left: 15rem; */
   width: 2px;
   height: 300px;
   background: #d8d8d8;
