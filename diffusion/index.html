@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diffusion Models | Learning to Reverse Noise</title>
+    <meta
+      name="description"
+      content="An academic introduction to diffusion models, their core idea, and why reverse-noising became a major method in generative AI."
+    >
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="reading-progress" aria-hidden="true">
+      <span class="reading-progress__fill"></span>
+    </div>
+    <div class="site-shell">
+      <header class="topbar">
+        <div>
+          <div class="site-kicker">Website Layout Project</div>
+          <strong>Diffusion Models</strong>
+        </div>
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="index.html" aria-current="page">Overview</a></li>
+            <li><a href="process.html">Mechanics</a></li>
+            <li><a href="applications.html">Applications</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <span class="eyebrow">Generative AI / Visual Computing</span>
+          <h1 id="hero-title">Learning to Reverse Noise</h1>
+          <p>
+            Diffusion models generate images by beginning with randomness and then repeatedly
+            removing noise until recognizable structure appears. That idea sounds simple, but it
+            changed the direction of image synthesis because it connects probability, learning, and
+            visual form in a remarkably stable way.
+          </p>
+          <div class="hero-meta" aria-label="Page summary">
+            <span class="meta-pill">Three-page academic site</span>
+            <span class="meta-pill">Grid for page structure</span>
+            <span class="meta-pill">Flexbox for navigation and metrics</span>
+          </div>
+        </section>
+
+        <div class="page-grid">
+          <article class="content-stack" aria-labelledby="overview-heading">
+            <section class="panel intro-split">
+              <div class="flow-content">
+                <h2 id="overview-heading">What makes diffusion models important?</h2>
+                <figure class="float-figure">
+                  <img
+                    src="assets/images/noise-field.svg"
+                    alt="An abstract visualization of scattered particles becoming an organized wave-like image."
+                  >
+                  <figcaption>
+                    The visual metaphor of diffusion is straightforward: structure emerges from
+                    disorder through many small denoising updates.
+                  </figcaption>
+                </figure>
+                <p>
+                  A diffusion model is a generative model trained to undo a gradual corruption
+                  process. During training, clean data such as photographs are repeatedly perturbed
+                  with small amounts of random noise. The system then learns how to predict the
+                  noise that was added at each step. Once that reverse process is learned, the
+                  model can start from pure noise and transform it into a new sample that resembles
+                  the training distribution.
+                </p>
+                <p>
+                  This approach became especially influential because it gave researchers a method
+                  that was both flexible and dependable. Earlier image generators often struggled
+                  with unstable training, mode collapse, or poor control over fine detail.
+                  Diffusion models were slower, but they usually produced cleaner textures, more
+                  consistent composition, and more reliable results across many prompts. In other
+                  words, they traded speed for quality and controllability, and that trade turned
+                  out to be attractive in both research and creative practice.
+                </p>
+                <p>
+                  The method also has a strong conceptual appeal. Instead of imagining generation
+                  as a single leap from nothing to image, diffusion frames generation as a
+                  sequence of small corrections. Each step asks a modest question: if this sample
+                  is slightly too noisy, what direction moves it closer to the data? That makes the
+                  process easier to optimize and easier to explain. It is one reason diffusion
+                  models are often used in classrooms to introduce the connection between
+                  probability and image synthesis.
+                </p>
+              </div>
+            </section>
+
+            <section class="panel" aria-labelledby="concept-heading">
+              <h2 id="concept-heading">A short conceptual history</h2>
+              <p>
+                The word <em>diffusion</em> comes from physics, where particles spread from regions
+                of high concentration to low concentration. Machine learning researchers borrowed
+                that language to describe a process that gradually pushes data toward noise. The
+                modern version of diffusion modeling draws from several lines of research,
+                including nonequilibrium thermodynamics, denoising autoencoders, and score-based
+                modeling. What matters for this site is not every historical detail, but the way
+                these ideas came together around one central insight: if a model can estimate how
+                to move a noisy sample toward cleaner data, then it can also synthesize new data by
+                repeating that estimate many times.
+              </p>
+              <p>
+                That insight made diffusion models especially compatible with text-to-image systems.
+                A prompt such as “a red kite over a winter coastline” can be converted into a
+                conditioning signal, and the denoising network can use that signal at every step.
+                The image is not retrieved from a database. It is assembled iteratively, as the
+                model balances noise prediction with semantic guidance from language. This is why
+                diffusion models matter academically: they show how probabilistic modeling,
+                language conditioning, and visual representation can be linked inside one coherent
+                generative pipeline.
+              </p>
+
+              <div class="metric-row" aria-label="Key properties">
+                <div class="metric">
+                  <strong>Iterative</strong>
+                  Generation happens over many denoising steps instead of one direct pass.
+                </div>
+                <div class="metric">
+                  <strong>Probabilistic</strong>
+                  Outputs are samples from a learned distribution rather than fixed reconstructions.
+                </div>
+                <div class="metric">
+                  <strong>Controllable</strong>
+                  Text, masks, depth maps, and other signals can steer the reverse process.
+                </div>
+              </div>
+            </section>
+          </article>
+
+          <aside class="side-stack">
+            <section class="panel" aria-labelledby="glossary-heading">
+              <h2 class="sidebar-title" id="glossary-heading">Glossary</h2>
+              <ul class="sidebar-list">
+                <li>
+                  <strong>Noise schedule:</strong> the plan for how much corruption is added over
+                  time.
+                </li>
+                <li>
+                  <strong>Denoising network:</strong> usually a U-Net that predicts the noise
+                  hidden in the current sample.
+                </li>
+                <li>
+                  <strong>Latent space:</strong> a compressed representation used to make training
+                  and sampling more efficient.
+                </li>
+                <li>
+                  <strong>Conditioning:</strong> extra information, such as text, that guides the
+                  output.
+                </li>
+              </ul>
+            </section>
+
+            <section class="panel" aria-labelledby="timeline-heading">
+              <h2 class="sidebar-title" id="timeline-heading">Why this topic fits the assignment</h2>
+              <ul class="timeline">
+                <li>
+                  <strong>Specialized subject:</strong> diffusion models are specific enough to
+                  support focused analysis rather than a broad overview of all AI.
+                </li>
+                <li>
+                  <strong>Visual topic:</strong> the denoising process is easy to diagram, which
+                  makes it ideal for a layout-driven website.
+                </li>
+                <li>
+                  <strong>Academic angle:</strong> the topic connects mathematics, computer
+                  science, and design culture.
+                </li>
+              </ul>
+            </section>
+
+            <section class="panel">
+              <p class="quote">
+                Diffusion models are useful to study because they convert a difficult generative
+                problem into a long sequence of easier corrective steps.
+              </p>
+              <div class="tag-row" aria-label="Topic tags">
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Image Synthesis</span>
+                <span class="tag">Probability</span>
+              </div>
+            </section>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>
+          This site introduces diffusion models across three pages: overview, sampling mechanics,
+          and real-world applications.
+        </p>
+        <div class="footer-links">
+          <a href="process.html">Next: how the reverse process works</a>
+        </div>
+      </footer>
+    </div>
+    <script src="progress.js"></script>
+  </body>
+</html>

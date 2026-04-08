@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diffusion Models | Applications and Limits</title>
+    <meta
+      name="description"
+      content="A page surveying applications of diffusion models in art, science, and design, along with important limitations."
+    >
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="reading-progress" aria-hidden="true">
+      <span class="reading-progress__fill"></span>
+    </div>
+    <div class="site-shell">
+      <header class="topbar">
+        <div>
+          <div class="site-kicker">Website Layout Project</div>
+          <strong>Diffusion Models</strong>
+        </div>
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="process.html">Mechanics</a></li>
+            <li><a href="applications.html" aria-current="page">Applications</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="applications-title">
+          <span class="eyebrow">Use Cases and Critique</span>
+          <h1 id="applications-title">Where Diffusion Models Matter</h1>
+          <p>
+            Diffusion models are often discussed through AI art, but their importance is broader.
+            They have become useful in scientific imaging, video, industrial design, and any task
+            that benefits from generating or restoring complex visual patterns under constraints.
+          </p>
+          <div class="hero-meta">
+            <span class="meta-pill">Creative tools</span>
+            <span class="meta-pill">Scientific imaging</span>
+            <span class="meta-pill">Ethical limits</span>
+          </div>
+        </section>
+
+        <div class="page-grid">
+          <article class="content-stack">
+            <section class="panel">
+              <h2>Applications across fields</h2>
+              <div class="application-grid">
+                <section class="note-card">
+                  <h3>Art and illustration</h3>
+                  <p>
+                    Diffusion systems can rapidly explore lighting, composition, costume, material,
+                    and color variation. For artists, they are often less valuable as final authors
+                    than as ideation machines that expand a sketch into multiple visual directions.
+                  </p>
+                </section>
+                <section class="note-card">
+                  <h3>Film and media production</h3>
+                  <p>
+                    In video and concept workflows, diffusion models are used for storyboard
+                    generation, style transfer, inpainting, and texture development. The ability to
+                    condition the model with masks or reference images is what makes it production
+                    friendly.
+                  </p>
+                </section>
+                <section class="note-card">
+                  <h3>Science and medicine</h3>
+                  <p>
+                    Researchers have adapted diffusion ideas for super-resolution microscopy,
+                    reconstruction from incomplete measurements, and molecule or protein generation.
+                    In those settings, the model is not simply making pictures. It is estimating
+                    plausible structure from noisy or partial data.
+                  </p>
+                </section>
+                <section class="note-card">
+                  <h3>Human-computer interaction</h3>
+                  <p>
+                    Text-guided image generation also changes interface design. Instead of selecting
+                    from menus alone, users can describe intent in language and refine outputs
+                    conversationally. This shifts part of design practice toward prompt engineering
+                    and iterative curation.
+                  </p>
+                </section>
+              </div>
+            </section>
+
+            <section class="panel intro-split">
+              <div class="flow-content">
+                <h2>Limits that should not be ignored</h2>
+                <figure class="float-figure">
+                  <img
+                    src="assets/images/applications-map.svg"
+                    alt="Diagram connecting a central diffusion model node to illustration, imaging, design, and research applications."
+                  >
+                  <figcaption>
+                    The same denoising framework can be redirected toward creative, scientific, and
+                    industrial goals.
+                  </figcaption>
+                </figure>
+                <p>
+                  The success of diffusion models does not remove their problems. They are
+                  computationally expensive, dependent on large datasets, and vulnerable to bias in
+                  those datasets. They can generate persuasive but inaccurate imagery. They also
+                  raise questions about consent, attribution, and labor when training data includes
+                  artists’ work or culturally sensitive material.
+                </p>
+                <p>
+                  From an academic perspective, these limitations are part of the topic, not a side
+                  note. A good explanation of diffusion models should address the social system
+                  around them: who builds them, whose images train them, who benefits from them, and
+                  who is displaced when image generation becomes cheap. This is another reason the
+                  subject works well for a class website. It combines technical explanation with
+                  historical and ethical analysis.
+                </p>
+              </div>
+            </section>
+
+            <section class="panel">
+              <h2>Why I chose this topic</h2>
+              <p>
+                Diffusion models are a strong website subject because they reward visual design.
+                They invite diagrams, timelines, and side notes, and they also demonstrate how a
+                digital interface can clarify a difficult idea. A reader can move from overview to
+                mechanics to applications in a logical path, which fits the assignment requirement
+                for a multi-page site. At the same time, the topic remains narrow enough to keep the
+                writing focused. Rather than making a vague site about “artificial intelligence,”
+                the project explains one method in enough depth to feel specialized and academic.
+              </p>
+            </section>
+          </article>
+
+          <aside class="side-stack">
+            <section class="panel">
+              <h2 class="sidebar-title">Strengths</h2>
+              <ul class="sidebar-list">
+                <li><strong>High fidelity:</strong> diffusion models often produce sharp textures and coherent global form.</li>
+                <li><strong>Flexible control:</strong> prompts, masks, depth, and reference images can all guide results.</li>
+                <li><strong>Cross-domain use:</strong> the framework transfers well beyond art images.</li>
+              </ul>
+            </section>
+
+            <section class="panel">
+              <h2 class="sidebar-title">Risks</h2>
+              <ul class="sidebar-list">
+                <li><strong>Bias:</strong> outputs reflect the cultural and visual biases of training data.</li>
+                <li><strong>Opacity:</strong> believable images can still misrepresent evidence or reality.</li>
+                <li><strong>Labor concerns:</strong> training and deployment may depend on uncredited creative work.</li>
+              </ul>
+            </section>
+
+            <section class="panel">
+              <p class="quote">
+                The most responsible way to study diffusion models is to treat them as both a
+                technical method and a cultural technology with real consequences.
+              </p>
+            </section>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>
+          The site closes with applications and limits because understanding a model includes
+          understanding what it changes in the world around it.
+        </p>
+        <div class="footer-links">
+          <a href="index.html">Back to the overview</a>
+        </div>
+      </footer>
+    </div>
+    <script src="progress.js"></script>
+  </body>
+</html>

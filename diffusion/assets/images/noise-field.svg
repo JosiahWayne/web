@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Noise condensing into form</title>
+  <desc id="desc">An abstract scientific illustration showing scattered dots and gradients becoming organized bands and a central luminous form.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f4efe4"/>
+      <stop offset="100%" stop-color="#f6d9ba"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="#fffdf8"/>
+      <stop offset="60%" stop-color="#f2c286"/>
+      <stop offset="100%" stop-color="#cf5d2e"/>
+    </radialGradient>
+  </defs>
+  <rect width="900" height="700" rx="36" fill="url(#bg)"/>
+  <g opacity="0.65" fill="#2f8190">
+    <circle cx="88" cy="110" r="5"/>
+    <circle cx="120" cy="220" r="6"/>
+    <circle cx="95" cy="345" r="4"/>
+    <circle cx="170" cy="150" r="4"/>
+    <circle cx="210" cy="290" r="7"/>
+    <circle cx="170" cy="430" r="6"/>
+    <circle cx="120" cy="560" r="5"/>
+    <circle cx="210" cy="610" r="6"/>
+    <circle cx="320" cy="100" r="5"/>
+    <circle cx="300" cy="520" r="6"/>
+    <circle cx="760" cy="150" r="4"/>
+    <circle cx="820" cy="270" r="7"/>
+    <circle cx="790" cy="420" r="5"/>
+    <circle cx="730" cy="560" r="4"/>
+  </g>
+  <g opacity="0.18" stroke="#1d2440" stroke-width="2" fill="none">
+    <path d="M70 510 C180 400 280 360 430 350 S710 290 840 180"/>
+    <path d="M60 430 C180 380 300 290 445 290 S700 260 850 120"/>
+    <path d="M50 590 C190 470 260 470 445 445 S720 360 850 285"/>
+  </g>
+  <g>
+    <ellipse cx="470" cy="360" rx="170" ry="120" fill="url(#glow)" opacity="0.88"/>
+    <path d="M300 405 C380 270 510 265 625 330 C566 455 434 482 300 405Z" fill="#1d2440" opacity="0.86"/>
+    <path d="M345 386 C402 297 486 298 571 344 C524 421 428 431 345 386Z" fill="#f7f1e3" opacity="0.92"/>
+    <path d="M390 375 C435 328 495 327 546 356 C512 402 449 405 390 375Z" fill="#2f8190" opacity="0.94"/>
+  </g>
+</svg>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diffusion Models | Mechanics of Sampling</title>
+    <meta
+      name="description"
+      content="A page explaining the forward process, reverse process, and guided sampling used by diffusion models."
+    >
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="reading-progress" aria-hidden="true">
+      <span class="reading-progress__fill"></span>
+    </div>
+    <div class="site-shell">
+      <header class="topbar">
+        <div>
+          <div class="site-kicker">Website Layout Project</div>
+          <strong>Diffusion Models</strong>
+        </div>
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="process.html" aria-current="page">Mechanics</a></li>
+            <li><a href="applications.html">Applications</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="mechanics-title">
+          <span class="eyebrow">Reverse Process</span>
+          <h1 id="mechanics-title">How Sampling Becomes an Image</h1>
+          <p>
+            The practical strength of diffusion models comes from a disciplined workflow: add noise
+            gradually, train a network to estimate the corruption, and then reverse those steps at
+            generation time while conditioning on a prompt or other control signal.
+          </p>
+          <div class="hero-meta">
+            <span class="meta-pill">Forward process</span>
+            <span class="meta-pill">Reverse process</span>
+            <span class="meta-pill">Guided generation</span>
+          </div>
+        </section>
+
+        <div class="page-grid">
+          <article class="content-stack">
+            <section class="panel">
+              <h2>1. The forward process</h2>
+              <p>
+                Training begins with a clean image and a schedule that determines how much Gaussian
+                noise is added at each timestep. Early steps barely disturb the image, while later
+                steps remove nearly all recognizable structure. After enough steps, the image is
+                transformed into something close to pure random noise. This corruption process is
+                usually fixed in advance, which means the model does not need to learn how to break
+                images apart. It only needs to learn how to reverse a process that we already
+                understand mathematically.
+              </p>
+              <p>
+                That design choice is important. By making the forward process simple and known, the
+                learning problem becomes focused: given a noisy sample at time <code>t</code>, what
+                noise was added, or what clean image would have produced this state? Different
+                diffusion papers frame the target slightly differently, but they are all versions of
+                the same denoising task.
+              </p>
+            </section>
+
+            <section class="panel">
+              <h2>2. The reverse process</h2>
+              <div class="intro-split">
+                <div class="flow-content">
+                  <figure class="float-figure">
+                    <img
+                      src="assets/images/diffusecat.png"
+                      alt="Five-step diagram showing noise being gradually refined into a stylized image through repeated denoising."
+                    >
+                    <figcaption>
+                      Sampling is cumulative: each step only partially improves the image, but the
+                      total sequence creates coherence.
+                    </figcaption>
+                  </figure>
+                  <p>
+                    During generation, the model starts from random noise and applies the learned
+                    reverse process step by step. At each stage, the network predicts what portion
+                    of the current sample is noise, and the sampler updates the image accordingly.
+                    A single step rarely looks impressive. The power comes from accumulation.
+                    Weak local corrections produce strong global structure when repeated dozens of
+                    times.
+                  </p>
+                  <p>
+                    In most popular systems, the prediction network is a U-Net with attention
+                    layers. The network sees the current noisy image, the timestep, and sometimes a
+                    text embedding. It then estimates the direction in latent space that should move
+                    the sample toward a plausible image. Sampling methods such as DDPM, DDIM, and
+                    more recent schedulers differ in how they trade off speed, randomness, and
+                    fidelity, but their underlying logic is shared.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel">
+              <h2>3. Guidance and control</h2>
+              <div class="feature-grid">
+                <section class="card">
+                  <h3>Classifier-free guidance</h3>
+                  <p>
+                    A common technique compares conditional and unconditional predictions to push
+                    the result closer to the prompt. Higher guidance can improve prompt adherence,
+                    but too much guidance often causes harsh contrast or unnatural details.
+                  </p>
+                </section>
+                <section class="card">
+                  <h3>Latent diffusion</h3>
+                  <p>
+                    Many systems perform denoising in a compressed latent representation rather
+                    than pixel space. This lowers the computational cost while preserving enough
+                    structure to decode a detailed final image.
+                  </p>
+                </section>
+                <section class="card">
+                  <h3>Structured conditions</h3>
+                  <p>
+                    Prompts are only one option. A diffusion model can also be guided by edge
+                    maps, depth maps, segmentation masks, or reference images, which makes the
+                    method useful for controlled design workflows.
+                  </p>
+                </section>
+              </div>
+            </section>
+          </article>
+
+          <aside class="side-stack">
+            <section class="panel">
+              <h2 class="sidebar-title">Sampling checklist</h2>
+              <ul class="sidebar-list">
+                <li><strong>Step 1:</strong> begin with random noise.</li>
+                <li><strong>Step 2:</strong> supply a timestep and optional prompt embedding.</li>
+                <li><strong>Step 3:</strong> predict the noise component.</li>
+                <li><strong>Step 4:</strong> update the sample with a scheduler rule.</li>
+                <li><strong>Step 5:</strong> repeat until the sample is clean enough to decode.</li>
+              </ul>
+            </section>
+
+            <section class="panel">
+              <h2 class="sidebar-title">Why the process is teachable</h2>
+              <p>
+                Diffusion models are technically advanced, but their structure is pedagogically
+                strong. Students can separate the system into named parts: corruption, prediction,
+                sampling, conditioning, and decoding. That modularity makes the model easier to
+                explain than systems that appear to “hallucinate” results in a single opaque pass.
+              </p>
+            </section>
+
+            <section class="panel">
+              <p class="quote">
+                One of the key insights of diffusion modeling is that generation can be framed as a
+                controlled sequence of denoising decisions instead of a single act of creation.
+              </p>
+            </section>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>
+          This page focuses on mechanics: the fixed forward process, the learned reverse process,
+          and the role of guidance in controllable sampling.
+        </p>
+        <div class="footer-links">
+          <a href="applications.html">Next: where diffusion models are used</a>
+        </div>
+      </footer>
+    </div>
+    <script src="progress.js"></script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 700" role="img" aria-labelledby="title desc">
+  <title id="title">Diffusion model applications map</title>
+  <desc id="desc">A central circle labeled diffusion connected to four surrounding circles for illustration, imaging, design, and research.</desc>
+  <rect width="900" height="700" rx="36" fill="#f6efe2"/>
+  <g stroke="#1d2440" stroke-width="4" fill="none" opacity="0.3">
+    <path d="M450 350 L235 170"/>
+    <path d="M450 350 L660 170"/>
+    <path d="M450 350 L250 535"/>
+    <path d="M450 350 L655 535"/>
+  </g>
+  <g>
+    <circle cx="450" cy="350" r="118" fill="#1d2440"/>
+    <circle cx="235" cy="170" r="95" fill="#cf5d2e"/>
+    <circle cx="660" cy="170" r="95" fill="#2f8190"/>
+    <circle cx="250" cy="535" r="95" fill="#e0b374"/>
+    <circle cx="655" cy="535" r="95" fill="#8ea9ad"/>
+  </g>
+  <g fill="#fffaf3" font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="450" y="340" font-size="34" font-weight="700">Diffusion</text>
+    <text x="450" y="382" font-size="34" font-weight="700">Model</text>
+    <text x="235" y="166" font-size="28" font-weight="700">Illustration</text>
+    <text x="235" y="202" font-size="18">concept art</text>
+    <text x="660" y="166" font-size="28" font-weight="700">Imaging</text>
+    <text x="660" y="202" font-size="18">restoration</text>
+    <text x="250" y="531" font-size="28" font-weight="700">Design</text>
+    <text x="250" y="567" font-size="18">iteration</text>
+    <text x="655" y="531" font-size="28" font-weight="700">Research</text>
+    <text x="655" y="567" font-size="18">molecules</text>
+  </g>
+</svg>
