@@ -25,6 +25,7 @@
             <li><a href="index.html">Overview</a></li>
             <li><a href="process.html" aria-current="page">Mechanics</a></li>
             <li><a href="applications.html">Applications</a></li>
+            <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
       </header>
@@ -73,7 +74,8 @@
                 <div class="flow-content">
                   <figure class="float-figure">
                     <img
-                      src="assets/images/diffusecat.png"
+                      src="assets/images/diffusecat-1x.png"
+                      srcset="assets/images/diffusecat-2x.png 2x"
                       alt="Five-step diagram showing noise being gradually refined into a stylized image through repeated denoising."
                     >
                     <figcaption>
@@ -130,6 +132,26 @@
                 </section>
               </div>
             </section>
+            <section class="panel">
+              <h2>Video: The Denoising Process</h2>
+              <p>Watch how a diffusion model gradually removes noise to generate an image:</p>
+              <video controls width="100%">
+                <source src="assets/video/diffusion_h264.mp4" type="video/mp4">
+                Your browser does not support the video element.
+              </video>
+            </section>
+
+            <section class="panel">
+              <h2>Video: How Diffusion Models Work</h2>
+              <p>A visual explanation of diffusion models by 3Blue1Brown:</p>
+              <div class="video-container">
+                <iframe
+                  src="https://www.youtube.com/embed/iv-5mZ_9CPY"
+                  title="How Diffusion Models Work - 3Blue1Brown"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </section>
           </article>
 
           <aside class="side-stack">
@@ -174,6 +196,13 @@
         </div>
       </footer>
     </div>
+    <div class="persistent-player" id="persistent-player">
+      <span>Now Playing</span>
+      <audio controls>
+        <source src="assets/music/music.mp3" type="audio/mpeg">
+      </audio>
+    </div>
     <script src="progress.js"></script>
+    <script src="spa.js"></script>
   </body>
 </html>

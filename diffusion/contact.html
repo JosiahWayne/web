@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Diffusion Models | Contact &amp; Media</title>
+    <meta
+      name="description"
+      content="Share your thoughts on diffusion models and explore related multimedia content."
+    >
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <div>
+          <div class="site-kicker">Website Layout Project</div>
+          <strong>Diffusion Models</strong>
+        </div>
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="process.html">Mechanics</a></li>
+            <li><a href="applications.html">Applications</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="contact-title">
+          <span class="eyebrow">Get in Touch</span>
+          <h1 id="contact-title">Share Your Thoughts</h1>
+          <p>
+            Have questions about diffusion models or want to share your experience with generative
+            AI? Fill out the form below and explore the multimedia resources on this page.
+          </p>
+        </section>
+
+        <div class="page-grid">
+          <article class="content-stack">
+            <section class="panel">
+              <h2>Contact Form</h2>
+              <form action="https://formspree.io/f/mjgjownl" method="POST" class="contact-form">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="Your email" required>
+                </div>
+                <div class="form-group">
+                  <label for="interest">Which area of diffusion models interests you most?</label>
+                  <select id="interest" name="interest">
+                    <option value="overview">General Overview</option>
+                    <option value="mechanics">Sampling Mechanics</option>
+                    <option value="art">Art &amp; Illustration</option>
+                    <option value="science">Science &amp; Medicine</option>
+                    <option value="ethics">Ethics &amp; Limitations</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="experience">Experience level with generative AI</label>
+                  <div class="radio-group">
+                    <label><input type="radio" name="experience" value="beginner"> Beginner</label>
+                    <label><input type="radio" name="experience" value="intermediate"> Intermediate</label>
+                    <label><input type="radio" name="experience" value="advanced"> Advanced</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="5" placeholder="Your thoughts or questions about diffusion models..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit</button>
+              </form>
+            </section>
+
+          </article>
+
+          <aside class="side-stack">
+            <!-- <section class="panel">
+              <h2 class="sidebar-title">Listen</h2>
+              <p>Background audio while you explore diffusion models:</p>
+              <audio controls>
+                <source src="assets/music/music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </section> -->
+
+            <section class="panel">
+              <h2 class="sidebar-title">Why reach out?</h2>
+              <ul class="sidebar-list">
+                <li><strong>Ask questions:</strong> curious about how diffusion models work? Let us know.</li>
+                <li><strong>Share ideas:</strong> working on a project related to generative AI? We'd love to hear about it.</li>
+                <li><strong>Give feedback:</strong> help us improve this educational resource.</li>
+              </ul>
+            </section>
+
+            <section class="panel">
+              <p class="quote">
+                The best way to learn about diffusion models is to engage with the community and
+                ask questions.
+              </p>
+            </section>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>
+          Thank you for visiting. Your feedback helps improve this educational resource on
+          diffusion models.
+        </p>
+        <div class="footer-links">
+          <a href="index.html">Back to the overview</a>
+        </div>
+      </footer>
+    </div>
+    <div class="persistent-player" id="persistent-player">
+      <span>Now Playing</span>
+      <audio controls>
+        <source src="assets/music/music.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+    <script src="spa.js"></script>
+  </body>
+</html>
