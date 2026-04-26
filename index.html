@@ -4,6 +4,12 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/style.css">
     <style>
+        :root {
+            --logo-primary: #1a6fbf;
+            --logo-secondary: #2d8659;
+            --logo-accent: #666666;
+        }
+
         main {
             background-color: #ffffff;
             padding: 20px;
@@ -27,7 +33,7 @@
         /* Background circle */
         .logo-bg {
             fill: none;
-            stroke: #1a6fbf;
+            stroke: var(--logo-primary);
             stroke-width: 3;
             transition: all 0.3s ease;
         }
@@ -35,7 +41,7 @@
         /* Inner circle */
         .logo-inner {
             fill: #f8f9fa;
-            stroke: #1a6fbf;
+            stroke: var(--logo-primary);
             stroke-width: 1.5;
             stroke-dasharray: 5 3;
             transition: all 0.3s ease;
@@ -44,7 +50,7 @@
         /* J letter styles */
         .letter-j {
             fill: none;
-            stroke: #1a6fbf;
+            stroke: var(--logo-primary);
             stroke-width: 8;
             stroke-linecap: round;
             stroke-linejoin: round;
@@ -54,7 +60,7 @@
         /* L letter styles */
         .letter-l {
             fill: none;
-            stroke: #2d8659;
+            stroke: var(--logo-secondary);
             stroke-width: 8;
             stroke-linecap: round;
             stroke-linejoin: round;
@@ -63,7 +69,7 @@
 
         /* Decorative dot */
         .dot {
-            fill: #2d8659;
+            fill: var(--logo-secondary);
             transition: all 0.3s ease;
         }
 
@@ -72,7 +78,7 @@
             font-family: "Helvetica Neue", Arial, sans-serif;
             font-size: 14px;
             font-weight: bold;
-            fill: #666;
+            fill: var(--logo-accent);
             text-anchor: middle;
             transition: all 0.3s ease;
         }
@@ -113,7 +119,30 @@
         }
 
         .jl-logo:hover .initials {
-            fill: #1a6fbf;
+            fill: var(--logo-primary);
+        }
+
+        .daily-update {
+            margin-top: 24px;
+            padding: 18px 20px;
+            border-left: 5px solid var(--logo-primary);
+            background-color: #f4f8fc;
+            border-radius: 8px;
+        }
+
+        .daily-update h2 {
+            margin-top: 0;
+            color: #1f3f5b;
+        }
+
+        .daily-update p:last-child {
+            margin-bottom: 0;
+        }
+
+        .debug-note {
+            margin-top: 10px;
+            color: #7b2c10;
+            font-size: 0.95rem;
         }
     </style>
     <title>Josiah's website on i6</title>
@@ -152,8 +181,14 @@
             <text x="100" y="185" class="initials">JL</text>
         </svg>
 
-        <p style="font-weight: bold;">This is Josiah's Website for CSCI-UA 4!</p>
+        <p id="portfolio-intro" style="font-weight: bold;">This is Josiah's Website for CSCI-UA 4!</p>
         <p>I'm Yanhao (Josiah) Li, a Computer Science undergraduate at NYU Shanghai currently studying away in New York. My academic interests sit at the intersection of machine learning and computer vision, especially generative models and representation learning. In this course, I'm hoping to strengthen my ability to communicate ideas clearly through writing and discussion, and to connect close reading with broader historical and social contexts. </p>
+        <section class="daily-update" aria-labelledby="daily-update-heading">
+          <h2 id="daily-update-heading">Today on the portfolio</h2>
+          <p id="daily-message">The page updates its content based on the current day of the week.</p>
+          <p id="logo-status">The SVG logo also changes color on class days.</p>
+          <p id="debug-note" class="debug-note" hidden></p>
+        </section>
         <ul style="margin-top: 20px;">
           <li><a href="./me/index.html">HTML</a></li>
           <li><a href="./css/index.html">CSS</a></li>
@@ -161,9 +196,10 @@
           <li><a href="./vector/index.html">Vector Graphics</a></li>
           <li><a href="./diffusion/index.html">Website Layout</a></li>
           <li><a href="./diffusion/index.html">Responsive Design</a></li>
-          <li>JavaScript</li>
+          <li><a href="./images/index.html">JavaScript Control</a></li>
           <li>Final Project</li>
         </ul>
     </main>
+    <script src="./scripts/portfolio.js" defer></script>
   </body>
 </html>

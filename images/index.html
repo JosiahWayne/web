@@ -51,15 +51,22 @@
       line-height: 1.5;
       font-size: 1rem;
     }
+
+    .position-note {
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
   <div class="caption">
     <h1>Lost in Space</h1>
     <p>This composition places me in a surreal outer-space landscape, creating a new context that feels imaginative and cinematic.</p>
+    <p class="position-note" id="position-note">Each time this page loads, JavaScript moves the cutout to a different spot in the scene.</p>
   </div>
 
   <img
+    id="foreground-image"
     class="foreground"
     src="./me-480.png"
     srcset="./me-480.png 480w, ./me-960.png 960w, ./me-1440.png 1440w"
@@ -67,5 +74,6 @@
     width="480"
     height="602"
   >
+  <script src="./random-position.js" defer></script>
 </body>
 </html>
