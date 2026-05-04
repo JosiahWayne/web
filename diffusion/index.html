@@ -28,6 +28,15 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
+        <button type="button" class="color-mode-toggle" aria-label="Switch to dark mode" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
       </header>
 
       <main>
@@ -136,20 +145,21 @@
           <aside class="side-stack">
             <section class="panel" aria-labelledby="glossary-heading">
               <h2 class="sidebar-title" id="glossary-heading">Glossary</h2>
+              <p class="glossary-hint">Tap any term to read a longer explanation.</p>
               <ul class="sidebar-list">
-                <li>
+                <li class="glossary-item" data-detail="In practice the noise schedule is a sequence of variances. Linear and cosine schedules are common; the cosine version keeps more signal in late steps and tends to improve sample quality.">
                   <strong>Noise schedule:</strong> the plan for how much corruption is added over
                   time.
                 </li>
-                <li>
+                <li class="glossary-item" data-detail="The denoising network sees the noisy sample and the timestep, and outputs an estimate of the noise. Most modern systems use a U-Net with attention so it can reason about both fine texture and global structure.">
                   <strong>Denoising network:</strong> usually a U-Net that predicts the noise
                   hidden in the current sample.
                 </li>
-                <li>
+                <li class="glossary-item" data-detail="Latent diffusion runs the reverse process inside a compressed feature space produced by a VAE. This lowers compute cost dramatically compared to working in raw pixel space, which is why models like Stable Diffusion are practical on consumer GPUs.">
                   <strong>Latent space:</strong> a compressed representation used to make training
                   and sampling more efficient.
                 </li>
-                <li>
+                <li class="glossary-item" data-detail="Conditioning signals are injected at every denoising step. Text prompts are encoded by a language model and fed into cross-attention layers, while structural conditions like depth maps or edge maps are concatenated with the input.">
                   <strong>Conditioning:</strong> extra information, such as text, that guides the
                   output.
                 </li>
@@ -207,5 +217,6 @@
     </div>
     <script src="progress.js"></script>
     <script src="spa.js"></script>
+    <script src="interact.js"></script>
   </body>
 </html>
